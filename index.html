@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>我的单页面应用</title>
+    <style>
+      /* 基础样式重置 */
+      body,
+      h1,
+      h2,
+      p,
+      ul {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        line-height: 1.6;
+        background-color: #f4f4f4;
+        color: #333;
+      }
+
+      /* 头部导航 */
+      header {
+        background-color: #333;
+        color: #fff;
+        padding: 1rem 0;
+        text-align: center;
+      }
+      header h1 {
+        margin-bottom: 0.5rem;
+      }
+      nav ul {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+      }
+      nav ul li {
+        margin: 0 15px;
+      }
+      nav ul li a {
+        color: #fff;
+        text-decoration: none;
+        padding: 0.5rem 1rem;
+        transition: background-color 0.3s ease;
+      }
+      nav ul li a:hover {
+        background-color: #555;
+        border-radius: 4px;
+      }
+
+      /* 主内容区域 */
+      main {
+        padding: 20px;
+        max-width: 960px;
+        margin: 20px auto;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+      }
+      section {
+        margin-bottom: 30px;
+        padding: 20px 0;
+        border-bottom: 1px dashed #eee;
+      }
+      section:last-child {
+        border-bottom: none;
+      }
+      section h2 {
+        color: #007bff;
+        margin-bottom: 15px;
+        border-bottom: 2px solid #007bff;
+        display: inline-block;
+        padding-bottom: 5px;
+      }
+      .content-box {
+        background-color: #e9f7ff;
+        padding: 15px;
+        border-left: 5px solid #007bff;
+        border-radius: 4px;
+      }
+
+      /* 页脚 */
+      footer {
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        padding: 1rem 0;
+        margin-top: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>欢迎来到我的单页面应用</h1>
+      <nav>
+        <ul>
+          <li><a href="#home">首页</a></li>
+          <li><a href="#about">关于我们</a></li>
+          <li><a href="#services">服务</a></li>
+          <li><a href="#contact">联系我们</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section id="home">
+        <h2>首页</h2>
+        <div class="content-box">
+          <p>
+            这里是首页的内容。你可以放置一些欢迎信息、最新动态或者重要公告。
+          </p>
+          <p>我们致力于提供优质的服务和卓越的用户体验。</p>
+        </div>
+      </section>
+
+      <section id="about">
+        <h2>关于我们</h2>
+        <div class="content-box">
+          <p>
+            我们是一家充满活力的公司，专注于
+            [你的公司专注领域，例如：Web开发、设计、咨询等]。
+          </p>
+          <p>我们的使命是 [你的公司使命]。</p>
+        </div>
+      </section>
+
+      <section id="services">
+        <h2>服务</h2>
+        <div class="content-box">
+          <p>我们提供的服务包括：</p>
+          <ul>
+            <li>Web 网站开发</li>
+            <li>移动应用开发</li>
+            <li>UI/UX 设计</li>
+            <li>技术咨询</li>
+          </ul>
+          <p>期待为您提供专业的解决方案。</p>
+        </div>
+      </section>
+
+      <section id="contact">
+        <h2>联系我们</h2>
+        <div class="content-box">
+          <p>如果您有任何疑问或合作意向，欢迎随时联系我们：</p>
+          <p>邮箱：<a href="mailto:info@example.com">info@example.com</a></p>
+          <p>电话：123-456-7890</p>
+          <p>地址：[你的地址]</p>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 我的单页面应用. 版权所有。</p>
+    </footer>
+
+    <script>
+      document.querySelectorAll("nav a").forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+
+          document.querySelector(this.getAttribute("href")).scrollIntoView({
+            behavior: "smooth",
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
